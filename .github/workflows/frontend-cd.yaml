@@ -1,4 +1,4 @@
-name: Frontend Continuous Deployment
+name: Frontend CD
 
 on:
   workflow_dispatch: 
@@ -9,7 +9,6 @@ on:
 
 jobs:
   Linting:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     environment: Devlopmnet Environment
 
@@ -32,7 +31,6 @@ jobs:
       run: cd starter/frontend && npm run lint
 
   Test:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
